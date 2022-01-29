@@ -60,14 +60,14 @@ a {
 
 /*} */
 
-
-
-h1 {
+.MainTitle {
   font-family: maven pro, sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 400;
   color: #092F76;
   text-transform: uppercase;
+  padding-left: 25px;
+  padding-top: 20px;
   /* color: #a6c1f3;
   font-size: 50px;
   /* -webkit-text-fill-color: white; */
