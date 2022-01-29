@@ -14,7 +14,7 @@ const NavigationMenu: React.FC<{ menuItems: INavigationItem[] }> = ({
           passHref
         >
           <div key={item.sys.id} className={styles.navigationLink}>
-            <span className="fw-bold p-3" style={{ color: "#333" }}>
+            <span className="fw-bold p-3" style={{ color: "white" }}>
               {item.fields.title}
             </span>
           </div>
