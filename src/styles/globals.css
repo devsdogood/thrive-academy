@@ -16,6 +16,8 @@ a {
 }
 /*start styling events page */
 #events-body{
+  display: flex;
+  flex-direction: column;
   background-color: #092f76;
   color:white;
   font-size: normal;
@@ -26,3 +28,11 @@ color:#F5C13E;
 text-decoration: underline;
 }
 /*end styling for events page */
+/* event component styling */
+#event-component{
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  color:white;
+  background-color: #092f76;
+}
