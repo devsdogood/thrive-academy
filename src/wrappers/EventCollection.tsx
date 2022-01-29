@@ -1,6 +1,6 @@
 const EventCollection: React.FC = ({ children }) => {
     return (
-        <div id="events-body">
+        <div id="events-body" className="event-list">
             {children}
         </div>
     );

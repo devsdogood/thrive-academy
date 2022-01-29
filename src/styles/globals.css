@@ -4,6 +4,13 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #092F76;
+  color: #F5C13E;
+  height: 100%;
+}
+
+div#__next {
+  height: 100%; 
 }
 
 a {
@@ -14,13 +21,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
 /*start styling events page */
 #events-body{
   display: flex;
   flex-direction: column;
-  background-color: #092f76;
-  color:white;
-  font-size: normal;
 }
 
 #events-body p a{
@@ -28,12 +33,49 @@ color:#F5C13E;
 text-decoration: underline;
 }
 /*end styling for events page */
+
 /* event component styling */
 #event-component{
   display: flex;
   flex-direction: column;
   align-content: space-between;
-  color:white;
-  background-color: #092f76;
 }
+
+.event .location::before {
+  content: "\01F4CD";
+}
+
+.event .date::before {
+  content: "\01F5D3";
+}
+
 /*end event component styling */
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  width: 50%;
+  align-self: center;
+}
+
+.header div {
+  display: inline-block;
+  padding: 10px;
+}
+
+.content {
+  /* width: 50%; */
+  align-self: center;
+  padding: 10px;
+  flex-grow: 1;
+  background-color: #092f76;
+  color:white;
+}
+
+.content a {
+  color: white;
+}
