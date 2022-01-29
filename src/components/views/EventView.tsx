@@ -1,5 +1,4 @@
 import { IEvent } from "@src/types/generated/contentful";
-import { Children } from "react";
 
 type EventViewProps = {
     entry: IEvent;
