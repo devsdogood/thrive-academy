@@ -14,6 +14,8 @@ This projects uses version `2` of the package-lock.json file. Version `2` requir
 
 ### Install project dependencies
 
+Use nvm.sh if you are savvy.
+
 `npm install`
 
 This installs dependencies from `package-lock.json`.

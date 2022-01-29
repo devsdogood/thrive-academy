@@ -4,6 +4,7 @@ import Image from "next/image";
 import logo from "public/logoForHeader.jpg";
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import navStyle from "../styles/NavigationMenu/NavigationMenu.module.css";
 
 const NavigationMenu: React.FC<{ menuItems: INavigationItem[] }> = ({
   menuItems,
@@ -12,13 +13,16 @@ const NavigationMenu: React.FC<{ menuItems: INavigationItem[] }> = ({
     <Navbar expand="lg" bg="white">
       <Container>
         <Navbar.Brand>
-          <Image
-            src={logo}
-            alt="chrysalislogo"
-            objectFit="contain"
-            width="110"
-            height="110"
-          />
+          <Link href={"/"}>
+            <Image
+              src={logo}
+              alt="chrysalislogo"
+              objectFit="contain"
+              width="110"
+              height="110"
+              className={navStyle.logo}
+            />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -35,9 +39,7 @@ const NavigationMenu: React.FC<{ menuItems: INavigationItem[] }> = ({
                 passHref
               >
                 <Nav.Link key={item.sys.id}>
-                  <span className="fw-bold p-3" style={{ color: "#333" }}>
-                    {item.fields.title}
-                  </span>
+                  <span className={navStyle.navMenu}>{item.fields.title}</span>
                 </Nav.Link>
               </Link>
             ))}
