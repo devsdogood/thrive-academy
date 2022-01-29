@@ -1,6 +1,7 @@
-import '@styles/globals.css'
-import type { AppProps } from 'next/app'
-import AppLayout from '@wrappers/AppWrapper';
+import "@styles/globals.css";
+import type { AppProps } from "next/app";
+import AppLayout from "@wrappers/AppWrapper";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -9,4 +10,4 @@ function MyApp({ Component, pageProps }: AppProps) {
     </AppLayout>
   );
 }
-export default MyApp
+export default MyApp;
