@@ -22,9 +22,10 @@ a {
   display: flex;
 }
 
-.col{
+/* .col{
   float: left;
   width: 50%;
+  text-align: left;
 }
 
 @media screen and (max-width: 600px) {
@@ -32,14 +33,15 @@ a {
     width: 100%;
     float: none;
   }
-}
+}  */
 
-.title{
-  padding-top: 6em;
-  padding-left: 6em;
+
+#motto{
   font-style: italic;
-  font-size: 150%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  padding-top: 5em;
+  font-weight: bolder;
 }
 
 .slide-img{
@@ -107,7 +109,7 @@ a {
 /* parallax */
 
 #pic1{
-  background-image: url('/slideimgs/thrivepic1.jpeg');
+  background-image: url('/homeimg2.jpeg');
   min-height: 500px;
   background-attachment: fixed;
   background-position: center;
@@ -116,12 +118,18 @@ a {
 }
 
 #pic2{
-  background-image: url('/slideimgs/thrivepic2.jpeg');
+  background-image: url('/homeimg1.jpeg');
   min-height: 500px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#mission, #vision, #volunteer, #community{
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .contentBelow h1{
