@@ -14,3 +14,41 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.event-preview {
+  padding: 1rem 3rem 3rem 3rem;
+  background: #fff;
+  max-width: 100%;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+  margin: 2.5%;
+}
+
+.event-preview-title {
+  font-size: 2em;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: #092f76;
+  text-decoration-thickness: .3rem;
+}
+
+.event-preview-date {
+  font-size: 1.5em;
+  font-style: italic;
+
+}
+
+.event-preview-link {
+  text-decoration: underline;
+  text-decoration-color: #f5c13e;
+  text-decoration-thickness: .2rem;
+}
+
+.event-preview-link:hover{
+  background:#092f76 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+  color: white;
+
+  
+}
