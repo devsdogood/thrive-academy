@@ -10,3 +10,4 @@ const ContentSection: React.FC<ContentSectionProps> = ({ entry }: ContentSection
 );
 
 export default ContentSection;
+
