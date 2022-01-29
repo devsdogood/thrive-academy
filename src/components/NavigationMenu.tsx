@@ -1,43 +1,29 @@
-import styles from "../styles/NavigationMenu/NavigationMenu.module.css";
 import { INavigationItem } from "@src/types/generated/contentful";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "/public/logoForHeader.jpg";
-import { useState, useEffect } from "react";
+import logo from "public/logoForHeader.jpg";
+import React from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
 const NavigationMenu: React.FC<{ menuItems: INavigationItem[] }> = ({
   menuItems,
-}) => {
-  const [windowSize, setWindowSize] = useState({
-    width: 0,
-    height: 0,
-  });
-  useEffect(() => {
-    // Handler to call on window resize
-    function handleResize() {
-      // Set window width/height to state
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-    // Add event listener
-    window.addEventListener("resize", handleResize);
-    // Call handler right away so state gets updated with initial window size
-    handleResize();
-    // Remove event listener on cleanup
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  return (
-    <>
-      <div className={styles.headerWrapper}>
-        <div className={styles.headerContent}>
-          <div className={styles.imageWrapper}>
-            <Link href="/">
-              <Image src={logo} className={styles.logoImage}></Image>
-            </Link>
-          </div>
-          <div className={styles.rightHeader}>
+}) => (
+  <>
+    <Navbar expand="lg" bg="white">
+      <Container>
+        <Navbar.Brand>
+          <Image
+            src={logo}
+            alt="chrysalislogo"
+            objectFit="contain"
+            width="110"
+            height="110"
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto"></Nav>
+          <Nav>
             {menuItems.map((item) => (
               <Link
                 key={item.sys.id}
@@ -48,16 +34,18 @@ const NavigationMenu: React.FC<{ menuItems: INavigationItem[] }> = ({
                 }
                 passHref
               >
-                <div key={item.sys.id} className={styles.navbars}>
-                  <span className="fw-bold p-3">{item.fields.title}</span>
-                </div>
+                <Nav.Link key={item.sys.id}>
+                  <span className="fw-bold p-3" style={{ color: "#333" }}>
+                    {item.fields.title}
+                  </span>
+                </Nav.Link>
               </Link>
             ))}
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  </>
+);
 
 export default NavigationMenu;
