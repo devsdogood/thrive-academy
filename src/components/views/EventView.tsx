@@ -18,10 +18,8 @@ const EventView: React.FC<EventViewProps> = ({ entry }) => {
             <div>
                 <h1>{entry.fields.title}</h1>
                 <div>
-                    <span>
-                        <FaCalendar /> {Date(entry.fields.dateAndTime)}{` `}
-                        <FaMapMarker /> {entry.fields.location}
-                    </span>
+                    <FaCalendar /> {Date(entry.fields.dateAndTime)}{` `}
+                    <FaMapMarker /> {entry.fields.location}
                 </div>
                 <br />
                 <div>{documentToReactComponents(entry.fields.content.fields.content)}</div>
