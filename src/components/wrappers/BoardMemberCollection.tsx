@@ -1,9 +1,11 @@
 const BoardMemberCollection: React.FC = ({ children }) => {
     return (
         <div>
-            <h1 className = 'MainTitle'>Thrive Academy Board Members</h1>
-            {children}
-        
+            <h1>Thrive Academy Board Members</h1>
+            <br />
+            <div>
+                {children}
+            </div>
         </div>
     );
 }

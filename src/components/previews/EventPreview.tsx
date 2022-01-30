@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import { IEvent } from "@src/types/generated/contentful";
 import { parseISO, format } from 'date-fns'
-import styles from "../../styles/EventsStyle/EventsStyle.module.css";
+import { Card, Row } from 'react-bootstrap';
+import { FaCalendar, FaMapMarker } from 'react-icons/fa';
 
 type EventPreviewProps = {
   entry: IEvent;
@@ -12,15 +13,28 @@ const EventPreview: React.FC<EventPreviewProps> = ({ entry }) => {
   let date = Date(time)
 
   return (
-    <div className={styles.eventPreview}>
-      <div className={styles.eventPreviewTitle}>{entry.fields.title} at slug{" "}</div>
-      <div className={styles.eventPreviewDate}>{date}</div>
-      <div className={styles.eventPreviewLocation}>{entry.fields.location}</div>
+    <Row className='mb-2'>
+      <Link href={`/events/${entry.fields.slug}`}>
+        <a>
+          <Card>
+            <Card.Body>
+              <Card.Title>
+                {entry.fields.title}
+              </Card.Title>
+              <Card.Subtitle>
+                <FaCalendar /> {date}
+                <br />
+                <FaMapMarker /> {entry.fields.location}
+              </Card.Subtitle>
 
-      SEE MORE: <Link href={`/events/${entry.fields.slug}`}>
-        <a className={styles.eventPreviewLink}>{entry.fields.slug}</a>
+              <Card.Text>
+                Click for more details
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </a>
       </Link>
-    </div>
+    </Row>
   );
 };
 
