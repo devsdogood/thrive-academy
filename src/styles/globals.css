@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #fefeff;
 }
 
 a {
@@ -15,26 +16,69 @@ a {
   box-sizing: border-box;
 }
 
-/* fade */
+.BoardMember {
+  padding: 20px;
+  border-right: 5px solid #092f76;
+}
 
-.row{
-  background-color: #092f76;
+.row {
   display: flex;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  align-items: flex-start;
 }
 
-/* .col{
-  float: left;
-  width: 50%;
-  text-align: left;
+.flex-grow {
+  flex-grow: true;
 }
 
-@media screen and (max-width: 600px) {
-  .col{
-    width: 100%;
-    float: none;
-  }
-}  */
+.flex-shrink {
+  flex-shrink: true,
+}
 
+.BoardMemberDetails {
+  padding: 25px; 
+
+}
+
+.MainTitle {
+  font-family: maven pro, sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  color: #092F76;
+  text-transform: uppercase;
+  padding-left: 25px;
+  padding-top: 20px;
+}
+
+.fullName {
+  color: #092f76; 
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Assistant", "Helvetica Neue", sans-serif;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.boardTitle{
+  color: #f5c13e; 
+  font-size: 20px;
+  font-weight: 550;
+  font-family: "Assistant", "Helvetica Neue", sans-serif;
+}
+
+.bio {
+  color: #000; 
+  font-size: 17px;
+  font-family: "Assistant", "Helvetica Neue", sans-serif;
+  padding: 10px;
+}
+
+/*start styling events page */
+#events-body{
+  display: flex;
+  flex-direction: column;
+}
 
 #motto{
   font-style: italic;
@@ -48,7 +92,6 @@ a {
   width: 100vh;
   height: 100vh;
   overflow: hidden;
-  /* margin-left: 50%; */
   position: relative;
   padding-top: 5em;
 }
@@ -103,7 +146,6 @@ a {
   text-align: left;
   position: relative;
   padding-top: 1em;
-  /* height: 180px; */
 }
 
 /* parallax */
@@ -145,7 +187,5 @@ a {
 
 .homeContent{
   margin-top: 1em;
-  /* padding-top: 3em; */
   padding-bottom: 3em;
-  /* color: aliceblue; */
 }

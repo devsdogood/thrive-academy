@@ -12,6 +12,9 @@ export interface IBoardMemberFields {
 
   /** Bio */
   bio: string;
+
+  /** Board Title */
+  boardTitle?: string | undefined;
 }
 
 export interface IBoardMember extends Entry<IBoardMemberFields> {
