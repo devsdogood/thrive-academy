@@ -14,14 +14,16 @@ const NavigationMenu: React.FC<{ menuItems: INavigationItem[] }> = ({
       <Container>
         <Navbar.Brand>
           <Link href={"/"}>
-            <Image
-              src={logo}
-              alt="chrysalislogo"
-              objectFit="contain"
-              width="110"
-              height="110"
-              className={navStyle.logo}
-            />
+            <a>
+              <Image
+                src={logo}
+                alt="Thrive Academy"
+                objectFit="contain"
+                width="110"
+                height="110"
+                className={navStyle.logo}
+              />
+            </a>
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
