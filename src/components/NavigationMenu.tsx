@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 const NavigationMenu: React.FC<{ menuItems: INavigationItem[] }> = ({
   menuItems,
 }) => {
-  useRouter().asPath
+  const path = useRouter().asPath;
   return (
     <>
       <Navbar expand="lg" variant="dark">
@@ -30,9 +30,8 @@ const NavigationMenu: React.FC<{ menuItems: INavigationItem[] }> = ({
             <Nav className="me-auto"></Nav>
             <Nav variant="pills">
               {menuItems.map((item) => (
-                <Nav.Item>
+                <Nav.Item key={item.sys.id}>
                   <Link
-                    key={item.sys.id}
                     href={
                       item.fields.page?.fields.slug ||
                       item.fields.externalUrl ||
@@ -41,7 +40,7 @@ const NavigationMenu: React.FC<{ menuItems: INavigationItem[] }> = ({
                     passHref
                   >
                     <Nav.Link key={item.sys.id} target={item.fields.externalUrl !== undefined ? '_blank' : ''} className={
-                      useRouter().asPath.split('/').slice(1, 2)[0] == item.fields.page?.fields.slug.split('/').slice(1, 2)[0] ? 'active' : ''}>
+                      path.split('/').slice(1, 2)[0] == item.fields.page?.fields.slug.split('/').slice(1, 2)[0] ? 'active' : ''}>
                       {item.fields.title}
                     </Nav.Link>
                   </Link>
