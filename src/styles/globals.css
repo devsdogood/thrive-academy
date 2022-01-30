@@ -4,6 +4,13 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #092F76;
+  color: #F5C13E;
+  height: 100%;
+}
+
+div#__next {
+  height: 100%; 
   background-color: #fefeff;
 }
 
@@ -14,6 +21,12 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/*start styling events page */
+#events-body{
+  display: flex;
+  flex-direction: column;
 }
 
 .BoardMember {
@@ -94,6 +107,52 @@ a {
   overflow: hidden;
   position: relative;
   padding-top: 5em;
+}
+/*end styling for events page */
+
+/* event component styling */
+#event-component{
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+/*end event component styling */
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  width: 50%;
+  align-self: center;
+}
+
+.header div {
+  display: inline-block;
+  padding: 10px;
+}
+
+.content {
+  align-self: center;
+  padding: 10px;
+  flex-grow: 1;
+  background-color: #092f76;
+  color:white;
+}
+
+.content a {
+  color: white;
+}
+
+.content .location::before {
+  content: "\01F4CD";
+}
+
+.content .date::before {
+  content: "\01F5D3";
 }
 
 .slide-img>img{
