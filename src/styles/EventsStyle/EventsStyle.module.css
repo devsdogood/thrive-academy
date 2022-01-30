@@ -9,6 +9,10 @@
     box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
     margin: 2.5%;
   }
+
+  .eventPreview a {
+    color: black;
+  }
   
   .eventPreviewTitle{
     font-size: 2em;
@@ -17,11 +21,20 @@
     text-decoration-color: #092f76;
     text-decoration-thickness: .3rem;
   }
+
+  .eventPreviewLocation::before {
+    content: "\01F4CD";
+  }
+  
   
   .eventPreviewDate {
     font-size: 1.5em;
     font-style: italic;
   
+  }
+
+  .eventPreviewDate::before {
+    content: "\01F5D3";
   }
   
   .eventPreviewLink {
@@ -32,5 +45,5 @@
   
   .eventPreviewLink:hover{
     background:#092f76 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
-    color: white;
+    color: darkgray;
   }
