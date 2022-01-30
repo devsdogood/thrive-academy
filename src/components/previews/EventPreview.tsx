@@ -11,15 +11,15 @@ const EventPreview: React.FC<EventPreviewProps> = ({ entry }) => {
   let time = entry.fields.dateAndTime
   let date = Date(time)
 
-
-
   return (
     <div className={styles.eventPreview}>
       <div className={styles.eventPreviewTitle}>{entry.fields.title} at slug{" "}</div>
       <div className={styles.eventPreviewDate}>{date}</div>
       <div className={styles.eventPreviewLocation}>{entry.fields.location}</div>
 
-      SEE MORE: <a className={styles.eventPreviewLink} href={`/events/${entry.fields.slug}`}>{entry.fields.slug}</a>
+      SEE MORE: <Link href={`/events/${entry.fields.slug}`}>
+        <a className={styles.eventPreviewLink}>{entry.fields.slug}</a>
+      </Link>
     </div>
   );
 };
