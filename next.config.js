@@ -49,4 +49,5 @@ module.exports = withNextPluginPreval({
   images: {
     domains: ['images.ctfassets.net'],
   },
+  swcMinify: false,
 });
