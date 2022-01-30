@@ -1,7 +1,9 @@
 const BoardMemberCollection: React.FC = ({ children }) => {
     return (
-        <div style={{border: 'purple 1px solid'}}>
+        <div>
+            <h1 className = 'MainTitle'>Thrive Academy Board Members</h1>
             {children}
+        
         </div>
     );
 }
