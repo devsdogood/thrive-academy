@@ -29,10 +29,7 @@ const BoardMember: React.FC<BoardMemberProps> = ({ entry }) => {
           </div>
           <br />
           <div className='boardTitle'>
-            <div>
-              {/* @ts-ignore */
-                entry.fields.boardTitle
-              }</div>
+            <div>{entry.fields.boardTitle}</div>
           </div>
           <br />
           <div className='bio'>
