@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { IBoardMember } from "@src/types/generated/contentful";
-import { Container, Row, Col} from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 type BoardMemberProps = {
   entry: IBoardMember;
@@ -10,11 +10,9 @@ const BoardMember: React.FC<BoardMemberProps> = ({ entry }) => {
   const image = entry.fields.image;
 
   return (
-    
-    <Container fluid> 
-
+    <Container fluid>
       <Row className="row">
-        <Col xs={12} sm={12} md={3} lg={3} xl={3}  className="column flex-shrink">
+        <Col xs={12} sm={12} md={3} lg={3} xl={3} className="column flex-shrink">
           <div className='BoardMember'>
             <Image
               src={`https:${image.fields.file.url}`}
@@ -31,7 +29,10 @@ const BoardMember: React.FC<BoardMemberProps> = ({ entry }) => {
           </div>
           <br />
           <div className='boardTitle'>
-            <div>{/* @ts-ignore */}{entry.fields.boardTitle}</div>
+            <div>
+              {/* @ts-ignore */
+                entry.fields.boardTitle
+              }</div>
           </div>
           <br />
           <div className='bio'>
@@ -40,10 +41,6 @@ const BoardMember: React.FC<BoardMemberProps> = ({ entry }) => {
         </Col>
       </Row>
     </Container>
-
-
-
-
   );
 };
 
