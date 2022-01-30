@@ -1,6 +1,6 @@
 const EventCollection: React.FC = ({ children }) => {
     return (
-        <div style={{border: 'red 1px solid'}}>
+        <div id="events-body" style={{ width:'600px',display:'flex',flexDirection:'column',margin:'0 auto', backgroundColor:"white"}}>
             {children}
         </div>
     );

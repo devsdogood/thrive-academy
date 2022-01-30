@@ -7,7 +7,10 @@ type EventViewProps = {
 const EventView: React.FC<EventViewProps> = ({ entry }) => {
     return (
         <>
+        <div id="event-component">
             <b>Event Component!</b>{' '}{entry.fields.title} at slug {entry.fields.slug}
+        </div>
+            
         </>
     );
 };

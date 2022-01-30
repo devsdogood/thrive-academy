@@ -1,0 +1,36 @@
+.eventPreview {
+    color: black;
+    padding: 1rem 3rem 3rem 3rem;
+    background: #fff;
+    max-width: 100%;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+    margin: 2.5%;
+  }
+  
+  .eventPreviewTitle{
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #092f76;
+    text-decoration-thickness: .3rem;
+  }
+  
+  .eventPreviewDate {
+    font-size: 1.5em;
+    font-style: italic;
+  
+  }
+  
+  .eventPreviewLink {
+    text-decoration: underline;
+    text-decoration-color: #f5c13e;
+    text-decoration-thickness: .2rem;
+  }
+  
+  .eventPreviewLink:hover{
+    background:#092f76 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+    color: white;
+  }
