@@ -1,21 +1,26 @@
 import Link from 'next/link'
 import { IEvent } from "@src/types/generated/contentful";
 import { parseISO, format } from 'date-fns'
+import styles from "../../styles/EventsStyle/EventsStyle.module.css";
 
 type EventPreviewProps = {
   entry: IEvent;
 };
 
 const EventPreview: React.FC<EventPreviewProps> = ({ entry }) => {
+  let time = entry.fields.dateAndTime
+  let date = Date(time)
+
+
+
   return (
-    <Link href={`/events/${entry.fields.slug}`}>
-      <a>
-        <div className='event-preview'>
-          <span className="title">{entry.fields.title}</span> -{` `}
-          <span className='date'>{Date(entry.fields.dateAndTime)}</span>
-        </div>
-      </a>
-    </Link>
+    <div className={styles.eventPreview}>
+      <div className={styles.eventPreviewTitle}>{entry.fields.title} at slug{" "}</div>
+      <div className={styles.eventPreviewDate}>{date}</div>
+      <div className={styles.eventPreviewLocation}>{entry.fields.location}</div>
+
+      SEE MORE: <a className={styles.eventPreviewLink} href={`/events/${entry.fields.slug}`}>{entry.fields.slug}</a>
+    </div>
   );
 };
 

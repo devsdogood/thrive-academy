@@ -9,7 +9,7 @@ const AppLayout: React.FC = ({ children }) => {
     const menuItems = menu.menuItems!;
 
     return (
-        <Container>
+        <Container className="site-wrapper">
             <Col className="justify-content-md-center">
                 <Row>
                     <NavigationMenu menuItems={menuItems} />
