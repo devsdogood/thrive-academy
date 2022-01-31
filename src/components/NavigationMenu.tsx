@@ -5,49 +5,53 @@ import logo from "public/logoForHeader.jpg";
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import navStyle from "../styles/NavigationMenu/NavigationMenu.module.css";
+import { useRouter } from "next/router";
 
 const NavigationMenu: React.FC<{ menuItems: INavigationItem[] }> = ({
   menuItems,
-}) => (
-  <>
-    <Navbar expand="lg" bg="white">
-      <Container>
-        <Navbar.Brand>
-          <Link href={"/"}>
-            <Image
-              src={logo}
-              alt="chrysalislogo"
-              objectFit="contain"
-              width="110"
-              height="110"
-              className={navStyle.logo}
-            />
-          </Link>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto"></Nav>
-          <Nav>
-            {menuItems.map((item) => (
-              <Link
-                key={item.sys.id}
-                href={
-                  item.fields.page?.fields.slug ||
-                  item.fields.externalUrl ||
-                  "/"
-                }
-                passHref
-              >
-                <Nav.Link key={item.sys.id}>
-                  <span className={navStyle.navMenu}>{item.fields.title}</span>
-                </Nav.Link>
-              </Link>
-            ))}
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  </>
-);
+}) => {
+  const path = useRouter().asPath;
+  return (
+    <>
+      <Navbar expand="lg" variant="dark">
+        <Container>
+          <Navbar.Brand style={{ textAlign: "center" }}>
+            <Link href={"/"}>
+              <a>
+                THRIVE ACADEMY
+              </a>
+            </Link>{` `}
+            <div className="motto" >
+              &#9733;LIVING &#9733;LEARNING &#9733;WORKING
+            </div>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto"></Nav>
+            <Nav variant="pills">
+              {menuItems.map((item) => (
+                <Nav.Item key={item.sys.id}>
+                  <Link
+                    href={
+                      item.fields.page?.fields.slug ||
+                      item.fields.externalUrl ||
+                      "/"
+                    }
+                    passHref
+                  >
+                    <Nav.Link key={item.sys.id} target={item.fields.externalUrl !== undefined ? '_blank' : ''} className={
+                      path.split('/').slice(1, 2)[0] == item.fields.page?.fields.slug.split('/').slice(1, 2)[0] ? 'active' : ''}>
+                      {item.fields.title}
+                    </Nav.Link>
+                  </Link>
+                </Nav.Item>
+              ))}
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </>
+  );
+};
 
 export default NavigationMenu;

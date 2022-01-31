@@ -38,7 +38,7 @@
         "src/utils/*"
       ],
       "@wrappers/*": [
-        "src/wrappers/*"
+        "src/components/wrappers/*"
       ],
       "@test/*": [
         "test/*"

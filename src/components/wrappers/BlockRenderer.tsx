@@ -10,8 +10,8 @@ import { IPage } from "@src/types/generated/contentful";
 import ContentSection from "@components/views/ContentSection";
 import EventPreview from "@components/previews/EventPreview";
 import BoardMember from "@components/views/BoardMember";
-import EventCollection from "@wrappers/EventCollection";
-import BoardMemberCollection from "@wrappers/BoardMemberCollection";
+import EventCollection from "@components/wrappers/EventCollection";
+import BoardMemberCollection from "@components/wrappers/BoardMemberCollection";
 
 type BlockRendererProps = {
   block: IPage | IPageFieldsItem | IPageItemFieldsItem;

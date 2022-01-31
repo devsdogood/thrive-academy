@@ -4,14 +4,13 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #092F76;
   color: #F5C13E;
+  background-color: #092F76;
   height: 100%;
 }
 
 div#__next {
   height: 100%; 
-  background-color: #fefeff;
 }
 
 a {
@@ -23,228 +22,46 @@ a {
   box-sizing: border-box;
 }
 
-/*start styling events page */
-#events-body{
-  display: flex;
-  flex-direction: column;
+.navbar-brand a {
+  color: #F5C13E;
 }
 
-.BoardMember {
-  padding: 20px;
-  border-right: 5px solid #092f76;
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background-color: #b79234;
 }
 
-.row {
-  display: flex;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  align-items: flex-start;
+.footer {
+  text-align: center;
 }
 
-.flex-grow {
-  flex-grow: true;
+.card {
+  color: #F5C13E;
+  background-color: #2c487c;
+border-radius: .5em;
+  box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
 }
 
-.flex-shrink {
-  flex-shrink: true,
+.card:hover {
+  background-color: #586d96;
 }
 
-.BoardMemberDetails {
-  padding: 25px; 
-
-}
-
-.MainTitle {
-  font-family: maven pro, sans-serif;
-  font-size: 25px;
-  font-weight: 400;
-  color: #092F76;
-  text-transform: uppercase;
-  padding-left: 25px;
-  padding-top: 20px;
-}
-
-.fullName {
-  color: #092f76; 
-  font-size: 24px;
-  font-weight: bold;
-  font-family: "Assistant", "Helvetica Neue", sans-serif;
-  grid-column-start: 1;
-  grid-column-end: 3;
-}
-
-.boardTitle{
-  color: #f5c13e; 
-  font-size: 20px;
-  font-weight: 550;
-  font-family: "Assistant", "Helvetica Neue", sans-serif;
-}
-
-.bio {
-  color: #000; 
-  font-size: 17px;
-  font-family: "Assistant", "Helvetica Neue", sans-serif;
-  padding: 10px;
-}
-
-/*start styling events page */
-#events-body{
-  display: flex;
-  flex-direction: column;
-}
-
-#motto{
+.motto {
+  font-size: 1rem;
+  color: #F5C13E;
   font-style: italic;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
-  padding-top: 5em;
   font-weight: bolder;
-}
-
-.slide-img{
-  width: 100vh;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  padding-top: 5em;
-}
-/*end styling for events page */
-
-/* event component styling */
-#event-component{
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-}
-
-/*end event component styling */
-
-.site-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.header {
-  width: 50%;
-  align-self: center;
-}
-
-.header div {
-  display: inline-block;
-  padding: 10px;
-}
-
-.content {
-  align-self: center;
-  padding: 10px;
-  flex-grow: 1;
-  background-color: #092f76;
-  color:white;
-}
-
-.content a {
-  color: white;
-}
-
-.content .location::before {
-  content: "\01F4CD";
-}
-
-.content .date::before {
-  content: "\01F5D3";
-}
-
-.slide-img>img{
-  width: 70%;
-	height: 70%;
-	position: absolute;
-  margin-left: 100px;
-  border-radius: 10%;
-	animation: animate 32s infinite;
-	opacity: 0;
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-position: center;
-  z-index: 1;
-}
-
-.slide-img>img:nth-child(2) {
-	animation-delay: 8s;
-}
-.slide-img>img:nth-child(3) {
-	animation-delay: 16s;
-}
-.slide-img>img:nth-child(4) {
-	animation-delay: 24s;
-}
-.slide-img>img:nth-child(5) {
-	animation-delay: 32s;
-}
-@keyframes animate {
-	10% {
-		opacity: 1;
-	}
-	20% {
-		opacity: 1;
-	}
-	30% {
-		opacity: 0;
-  }
-  40%{
-    transform: scale(.95);
-  }
-}
-
-.row h1{
-  color: #f5c13e;
-  letter-spacing: .5em;
-  word-spacing: .7em;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 500;
-  text-align: left;
-  position: relative;
-  padding-top: 1em;
-}
-
-/* parallax */
-
-#pic1{
-  background-image: url('/homeimg2.jpeg');
-  min-height: 500px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-#pic2{
-  background-image: url('/homeimg1.jpeg');
-  min-height: 500px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-#mission, #vision, #volunteer, #community{
-  padding-top: 1em;
-  padding-bottom: 1em;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.contentBelow h1{
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-}
-
-.contentBelow p{
-  font-size: 18px;
-  padding-left: 1em;
-  padding-right: 1em;
+  letter-spacing: .2em;
 }
 
 .homeContent{
   margin-top: 1em;
   padding-bottom: 3em;
+}
+
+.navbar-nav .nav-link {
+  padding-right: .5rem;
+  padding-left: .5rem;
 }
