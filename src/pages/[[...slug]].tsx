@@ -15,7 +15,7 @@ const SlugPage: NextPage<{ page: IPage | false }> = ({ page }) => {
   return (
     <>
       <Head>
-        <title>{page.fields.title}</title>
+        <title>Thrive Academy | {page.fields.title}</title>
         <meta name="description" content={page.fields.description} />
       </Head>
       <BlockRenderer block={page} />
