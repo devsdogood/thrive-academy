@@ -18,7 +18,6 @@ const BoardMember: React.FC<BoardMemberProps> = ({ entry }) => {
             <Image
               src={`https:${image.fields.file.url}`}
               alt={image.fields.description}
-              // layout="stretch"
               width={225}
               height={225}
             />

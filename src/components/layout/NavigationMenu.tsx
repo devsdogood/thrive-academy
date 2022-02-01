@@ -12,25 +12,28 @@ const NavigationMenu: React.FC<{ menuItems: INavigationItem[] }> = ({
 }) => {
   const path = useRouter().asPath;
   return (
-    <>
-      <Navbar expand="lg" variant="dark">
-        <Container>
+    <div className="navigation w-100">
+      <div className="container">
+        <Navbar expand="lg" variant="dark" className="p-0">
           <Navbar.Brand style={{ textAlign: "center" }}>
             <Link href={"/"}>
               <a>
                 THRIVE ACADEMY
               </a>
             </Link>{` `}
-            <div className="motto" >
+            <div className="motto d-none d-lg-block" >
               &#9733;LIVING &#9733;LEARNING &#9733;WORKING
             </div>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto"></Nav>
-            <Nav variant="pills">
+            <Nav className="ml-auto text-center">
               {menuItems.map((item) => (
-                <Nav.Item key={item.sys.id}>
+                <Nav.Item
+                  key={item.sys.id}
+                  className={
+                    path.split('/').slice(1, 2)[0] == item.fields.page?.fields.slug.split('/').slice(1, 2)[0] ? 'active' : ''}
+                >
                   <Link
                     href={
                       item.fields.page?.fields.slug ||
@@ -39,8 +42,10 @@ const NavigationMenu: React.FC<{ menuItems: INavigationItem[] }> = ({
                     }
                     passHref
                   >
-                    <Nav.Link key={item.sys.id} target={item.fields.externalUrl !== undefined ? '_blank' : ''} className={
-                      path.split('/').slice(1, 2)[0] == item.fields.page?.fields.slug.split('/').slice(1, 2)[0] ? 'active' : ''}>
+                    <Nav.Link
+                      key={item.sys.id}
+                      target={item.fields.externalUrl !== undefined ? '_blank' : ''}
+                    >
                       {item.fields.title}
                     </Nav.Link>
                   </Link>
@@ -48,9 +53,9 @@ const NavigationMenu: React.FC<{ menuItems: INavigationItem[] }> = ({
               ))}
             </Nav>
           </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </>
+        </Navbar>
+      </div>
+    </div>
   );
 };
 
