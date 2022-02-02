@@ -1,10 +1,12 @@
-import { Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 const EventCollection: React.FC = ({ children }) => {
     return (
-        <Col md="auto">
-            {children}
-        </Col>
+        <Container>
+            <Row>
+                {children}
+            </Row>
+        </Container>
     );
 }
 

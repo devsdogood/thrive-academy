@@ -5,8 +5,7 @@ type ContentSectionProps = { entry: IContentSection };
 
 const ContentSection: React.FC<ContentSectionProps> = ({ entry }: ContentSectionProps) => (
   <>
-    <br />
-    {documentToReactComponents(entry.fields.content)} 
+    {documentToReactComponents(entry.fields.content)}
   </>
 );
 

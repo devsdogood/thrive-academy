@@ -1,46 +1,60 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { IEvent } from "@src/types/generated/contentful";
 import { parseISO, format } from 'date-fns'
-import { Card, Row } from 'react-bootstrap';
-import { FaCalendar, FaMapMarker } from 'react-icons/fa';
+import { Card, Col } from 'react-bootstrap';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 type EventPreviewProps = {
   entry: IEvent;
 };
 
 const EventPreview: React.FC<EventPreviewProps> = ({ entry }) => {
-  let time = entry.fields.dateAndTime
-  let date = Date(time)
+  let time = entry.fields.dateAndTime;
+  let day = GetDay(time);
+  let month = GetMonth(time);
 
   return (
-    <Row className='mb-2'>
+    <Col lg={4} sm={6} className='mb-5'>
       <Link href={`/events/${entry.fields.slug}`}>
         <a>
-          <Card>
+          <Card className='border-0 rounded-0 hover-shadow'>
+            <div className="card-img position-relative">
+              <Image
+                src="/event-1.jpg"
+                alt="Event"
+                width={372}
+                height={328}
+              />
+            </div>
+            <div className="card-date">
+              <span>{day}</span>
+              <br />
+              {month}
+            </div>
             <Card.Body>
-              <Card.Title>
-                {entry.fields.title}
-              </Card.Title>
-              <Card.Subtitle>
-                <FaCalendar /> {date}
-                <br />
-                <FaMapMarker /> {entry.fields.location}
-              </Card.Subtitle>
+              <p><FaMapMarkerAlt /> {entry.fields.location}</p>
 
-              <Card.Text>
-                Click for more details
-              </Card.Text>
+              <h4 className="card-title">
+                {entry.fields.title}
+              </h4>
+
             </Card.Body>
           </Card>
         </a>
       </Link>
-    </Row>
+    </Col >
   );
 };
 
 export default EventPreview;
 
-export function Date(dateString: string) {
+export function GetDay(dateString: string) {
   const date = parseISO(dateString)
-  return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>
+  return <time dateTime={dateString}>{format(date, 'd')}</time>
+}
+
+export function GetMonth(dateString: string) {
+  const date = parseISO(dateString)
+  return <time dateTime={dateString}>{format(date, 'LLLL')}</time>
 }

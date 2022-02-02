@@ -8,6 +8,9 @@ import { IPage, IPageFields } from '@src/types/generated/contentful';
 import getContentful from '@utils/contentful';
 import BlockRenderer from '@components/wrappers/BlockRenderer';
 import Custom404Page from '@pages/404';
+import PageContent from '@components/layout/PageContent';
+import { Container } from 'react-bootstrap';
+import PageTitleSection from '@components/layout/PageTitleSection';
 
 const SlugPage: NextPage<{ page: IPage | false }> = ({ page }) => {
   if (!page) return <Custom404Page />
@@ -18,7 +21,12 @@ const SlugPage: NextPage<{ page: IPage | false }> = ({ page }) => {
         <title>Thrive Academy | {page.fields.title}</title>
         <meta name="description" content={page.fields.description} />
       </Head>
-      <BlockRenderer block={page} />
+      <PageTitleSection backgroundImage={'/page-title.jpg'} title={page.fields.title} />
+      <PageContent backgroundImage={''}>
+        <Container>
+          <BlockRenderer block={page} />
+        </Container>
+      </PageContent>
     </>
   );
 };
