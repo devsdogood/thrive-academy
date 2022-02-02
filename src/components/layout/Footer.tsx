@@ -19,7 +19,7 @@ const Footer: React.FC<Props> = ({ children }) => {
                         <Col lg={4} sm={8} className="mb-5 mb-lg-0">
                             <Link href="/">
                                 <a className="logo-footer">
-                                    <img
+                                    <Image
                                         width={175}
                                         height={101}
                                         className="img-fluid mb-4"

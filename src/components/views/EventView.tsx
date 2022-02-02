@@ -1,11 +1,10 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { IEvent } from "@src/types/generated/contentful";
 import { Breadcrumb, Container } from "react-bootstrap";
-import { Date } from '../previews/EventPreview';
 import { FaCalendar, FaMapMarker } from "react-icons/fa"
-import Head from "next/head";
 import PageContent from "@components/layout/PageContent";
 import PageTitleSection from "@components/layout/PageTitleSection";
+import { format, parseISO } from "date-fns";
 
 type EventViewProps = {
     entry: IEvent;
@@ -24,7 +23,7 @@ const EventView: React.FC<EventViewProps> = ({ entry }) => {
                     <div>
                         <h1>{entry.fields.title}</h1>
                         <div>
-                            <FaCalendar /> {Date(entry.fields.dateAndTime)}{` `}
+                            <FaCalendar /> {GetDate(entry.fields.dateAndTime)}{` `}
                             <FaMapMarker /> {entry.fields.location}
                         </div>
                         <br />
@@ -37,3 +36,8 @@ const EventView: React.FC<EventViewProps> = ({ entry }) => {
 };
 
 export default EventView;
+
+function GetDate(dateString: string) {
+    const date = parseISO(dateString)
+    return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>
+}
