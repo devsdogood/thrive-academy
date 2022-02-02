@@ -20,9 +20,9 @@ const Footer: React.FC<Props> = ({ children }) => {
                             <Link href="/">
                                 <a className="logo-footer">
                                     <Image
+                                        layout="fixed"
                                         width={175}
                                         height={101}
-                                        className="img-fluid mb-4"
                                         src="/thriveLogoFooter.png"
                                         alt="Thrive Academy"
                                     />
