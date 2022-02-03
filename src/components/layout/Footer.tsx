@@ -3,11 +3,13 @@ import Image from "next/image";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { FaEnvelope, FaFacebook } from "react-icons/fa";
+import { ISettingsFields } from "@src/types/generated/contentful";
 
 type Props = {
+    settings: ISettingsFields
 };
 
-const Footer: React.FC<Props> = ({ children }) => {
+const Footer: React.FC<Props> = ({ settings, children }) => {
     return (
         <footer>
             <div
@@ -23,28 +25,31 @@ const Footer: React.FC<Props> = ({ children }) => {
                                         layout="fixed"
                                         width={175}
                                         height={101}
-                                        src="/thriveLogoFooter.png"
+                                        src={`https:${settings.logo.fields.file.url}`}
                                         alt="Thrive Academy"
                                     />
                                 </a>
                             </Link>
                             <ul className="list-unstyled">
                                 <li className="mb-2">West Des Moines, IA</li>
-                                <li className="mb-2">
-                                    <Link href="https://www.facebook.com/groups/1138474949915990/">
-                                        <a>
-                                            <FaFacebook /> Thrive on Facebook
-                                        </a>
-                                    </Link>
-
-                                </li>
-                                <li className="mb-2">
-                                    <Link href="mailto:thriveacademyia@gmail.com">
-                                        <a>
-                                            <FaEnvelope /> thriveacademyia@gmail.com
-                                        </a>
-                                    </Link>
-                                </li>
+                                {settings.facebook !== undefined && settings.facebook.length > 0 &&
+                                    <li className="mb-2">
+                                        <Link href={`${settings.facebook}`}>
+                                            <a>
+                                                <FaFacebook /> Thrive on Facebook
+                                            </a>
+                                        </Link>
+                                    </li>
+                                }
+                                {settings.email !== undefined && settings.email.length > 0 &&
+                                    <li className="mb-2">
+                                        <Link href={`mailto:${settings.email}`}>
+                                            <a>
+                                                <FaEnvelope /> {settings.email}
+                                            </a>
+                                        </Link>
+                                    </li>
+                                }
                             </ul>
                         </Col>
                         <Col lg={2} md={3} sm={4} className="mb-5 mb-md-0">
@@ -158,13 +163,24 @@ const Footer: React.FC<Props> = ({ children }) => {
                         </Col>
                         <Col sm={5} className="text-sm-right text-center">
                             <ul className="list-inline">
-                                <li className="list-inline-item">
-                                    <Link href="https://www.facebook.com/groups/1138474949915990/">
-                                        <a className="d-inline-block p-2">
-                                            <FaFacebook />
-                                        </a>
-                                    </Link>
-                                </li>
+                                {settings.facebook !== undefined && settings.facebook.length > 0 &&
+                                    <li className="list-inline-item">
+                                        <Link href={`${settings.facebook}`}>
+                                            <a className="d-inline-block p-2" title="Join us on Facebook">
+                                                <FaFacebook />
+                                            </a>
+                                        </Link>
+                                    </li>
+                                }
+                                {settings.email !== undefined && settings.email.length > 0 &&
+                                    <li className="list-inline-item">
+                                        <Link href={`mailto:${settings.email}`}>
+                                            <a className="d-inline-block p-2" title={`Email us at ${settings.email}`}>
+                                                <FaEnvelope />
+                                            </a>
+                                        </Link>
+                                    </li>
+                                }
                             </ul>
                         </Col>
                     </Row>
