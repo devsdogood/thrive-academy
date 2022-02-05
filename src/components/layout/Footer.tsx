@@ -41,7 +41,7 @@ const Footer: React.FC<Props> = ({ settings, children }) => {
                                         </Link>
                                     </li>
                                 }
-                                {settings.email !== undefined && settings.email.length > 0 &&
+                                {settings.email &&
                                     <li className="mb-2">
                                         <Link href={`mailto:${settings.email}`}>
                                             <a>
@@ -163,7 +163,7 @@ const Footer: React.FC<Props> = ({ settings, children }) => {
                         </Col>
                         <Col sm={5} className="text-sm-right text-center">
                             <ul className="list-inline">
-                                {settings.facebook !== undefined && settings.facebook.length > 0 &&
+                                {settings.facebook &&
                                     <li className="list-inline-item">
                                         <Link href={`${settings.facebook}`}>
                                             <a className="d-inline-block p-2" title="Join us on Facebook">
@@ -172,7 +172,7 @@ const Footer: React.FC<Props> = ({ settings, children }) => {
                                         </Link>
                                     </li>
                                 }
-                                {settings.email !== undefined && settings.email.length > 0 &&
+                                {settings.email &&
                                     <li className="list-inline-item">
                                         <Link href={`mailto:${settings.email}`}>
                                             <a className="d-inline-block p-2" title={`Email us at ${settings.email}`}>
