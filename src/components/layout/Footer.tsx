@@ -32,7 +32,7 @@ const Footer: React.FC<Props> = ({ settings, children }) => {
                             </Link>
                             <ul className="list-unstyled">
                                 <li className="mb-2">West Des Moines, IA</li>
-                                {settings.facebook !== undefined && settings.facebook.length > 0 &&
+                                {settings.facebook &&
                                     <li className="mb-2">
                                         <Link href={`${settings.facebook}`}>
                                             <a>
