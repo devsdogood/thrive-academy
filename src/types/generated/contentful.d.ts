@@ -236,6 +236,39 @@ export interface IPage extends Entry<IPageFields> {
   };
 }
 
+export interface ISettingsFields {
+  /** name */
+  name: "Site Settings";
+
+  /** logo */
+  logo: Asset;
+
+  /** facebook */
+  facebook?: string | undefined;
+
+  /** email */
+  email?: string | undefined;
+}
+
+/** Settings to use on the site (social media links, etc) */
+
+export interface ISettings extends Entry<ISettingsFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "settings";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export type CONTENT_TYPE =
   | "boardMember"
   | "boardMemberCollection"
@@ -244,7 +277,8 @@ export type CONTENT_TYPE =
   | "eventCollection"
   | "navigationItem"
   | "navigationMenu"
-  | "page";
+  | "page"
+  | "settings";
 
 export type LOCALE_CODE = "en-US";
 

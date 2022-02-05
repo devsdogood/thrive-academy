@@ -15,6 +15,7 @@ export enum ContentTypes {
     NavigationItem = 'navigationItem',
     NavigationMenu = 'navigationMenu',
     Page = 'page',
+    Settings = 'settings',
 };
 
 /** Collections which map to single entries */
