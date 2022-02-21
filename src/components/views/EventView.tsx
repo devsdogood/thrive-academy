@@ -5,15 +5,18 @@ import { FaCalendar, FaMapMarker } from "react-icons/fa"
 import PageContent from "@components/layout/PageContent";
 import PageTitleSection from "@components/layout/PageTitleSection";
 import { format, parseISO } from "date-fns";
+import siteDataPreval from "@utils/siteData.preval";
 
 type EventViewProps = {
     entry: IEvent;
 }
 
 const EventView: React.FC<EventViewProps> = ({ entry }) => {
+    const { settings: { bannerImage } } = siteDataPreval;
+
     return (
         <>
-            <PageTitleSection backgroundImage={'/page-title.jpg'} title={entry.fields.title} />
+            <PageTitleSection backgroundImage={bannerImage.fields.file.url} title={entry.fields.title} />
             <PageContent backgroundImage={''}>
                 <Container>
                     <Breadcrumb>

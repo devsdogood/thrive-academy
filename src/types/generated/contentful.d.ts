@@ -304,6 +304,9 @@ export interface ISettingsFields {
 
   /** Footer Links */
   footerLinks?: IFooterLinkSection[] | undefined;
+
+  /** Banner Image */
+  bannerImage: Asset;
 }
 
 /** Settings to use on the site (social media links, etc) */

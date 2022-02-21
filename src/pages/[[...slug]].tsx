@@ -11,9 +11,12 @@ import Custom404Page from '@pages/404';
 import PageContent from '@components/layout/PageContent';
 import { Container } from 'react-bootstrap';
 import PageTitleSection from '@components/layout/PageTitleSection';
+import siteDataPreval from '@utils/siteData.preval';
 
 const SlugPage: NextPage<{ page: IPage | false }> = ({ page }) => {
   if (!page) return <Custom404Page />
+
+  const { settings: { bannerImage } } = siteDataPreval;
 
   return (
     <>
@@ -21,7 +24,7 @@ const SlugPage: NextPage<{ page: IPage | false }> = ({ page }) => {
         <title>Thrive Academy | {page.fields.title}</title>
         <meta name="description" content={page.fields.description} />
       </Head>
-      <PageTitleSection backgroundImage={'/page-title.jpg'} title={page.fields.title} />
+      <PageTitleSection backgroundImage={bannerImage.fields.file.url} title={page.fields.title} />
       <PageContent backgroundImage={''}>
         <Container>
           <BlockRenderer block={page} />
