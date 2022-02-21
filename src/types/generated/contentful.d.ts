@@ -127,6 +127,9 @@ export interface IEventCollectionFields {
 
   /** Events */
   content: IEvent[];
+
+  /** Showcase Event */
+  showcaseEvent?: IEvent | undefined;
 }
 
 export interface IEventCollection extends Entry<IEventCollectionFields> {
@@ -139,6 +142,56 @@ export interface IEventCollection extends Entry<IEventCollectionFields> {
     contentType: {
       sys: {
         id: "eventCollection";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
+export interface IFooterLinkSectionFields {
+  /** Section Title */
+  sectionTitle?: string | undefined;
+
+  /** Links */
+  links?: ILink[] | undefined;
+}
+
+export interface IFooterLinkSection extends Entry<IFooterLinkSectionFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "footerLinkSection";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
+export interface ILinkFields {
+  /** Link Text */
+  linkText?: string | undefined;
+
+  /** Link */
+  link: string;
+}
+
+export interface ILink extends Entry<ILinkFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "link";
         linkType: "ContentType";
         type: "Link";
       };
@@ -248,6 +301,9 @@ export interface ISettingsFields {
 
   /** email */
   email?: string | undefined;
+
+  /** Footer Links */
+  footerLinks?: IFooterLinkSection[] | undefined;
 }
 
 /** Settings to use on the site (social media links, etc) */
@@ -275,6 +331,8 @@ export type CONTENT_TYPE =
   | "contentSection"
   | "event"
   | "eventCollection"
+  | "footerLinkSection"
+  | "link"
   | "navigationItem"
   | "navigationMenu"
   | "page"

@@ -52,106 +52,20 @@ const Footer: React.FC<Props> = ({ settings, children }) => {
                                 }
                             </ul>
                         </Col>
-                        <Col lg={2} md={3} sm={4} className="mb-5 mb-md-0">
-                            <h4 className="text-white mb-5">Header</h4>
-                            <ul className="list-unstyled">
-                                <li className="mb-3">
-                                    <Link href="#">
-                                        <a>Item</a>
-                                    </Link>
-                                </li>
-                                <li className="mb-3">
-                                    <Link href="#">
-                                        <a>Item</a>
-                                    </Link>
-                                </li>
-                                <li className="mb-3">
-                                    <Link href="#">
-                                        <a>Item</a>
-                                    </Link>
-                                </li>
-                                <li className="mb-3">
-                                    <Link href="#">
-                                        <a>Item</a>
-                                    </Link>
-                                </li>
-                            </ul>
-                        </Col>
-                        <Col lg={2} md={3} sm={4} className="mb-5 mb-md-0">
-                            <h4 className="text-white mb-5">Header</h4>
-                            <ul className="list-unstyled">
-                                <li className="mb-3">
-                                    <Link href="#">
-                                        <a>Item</a>
-                                    </Link>
-                                </li>
-                                <li className="mb-3">
-                                    <Link href="#">
-                                        <a>Item</a>
-                                    </Link>
-                                </li>
-                                <li className="mb-3">
-                                    <Link href="#">
-                                        <a>Item</a>
-                                    </Link>
-                                </li>
-                                <li className="mb-3">
-                                    <Link href="#">
-                                        <a>Item</a>
-                                    </Link>
-                                </li>
-                            </ul>
-                        </Col>
-                        <Col lg={2} md={3} sm={4} className="mb-5 mb-md-0">
-                            <h4 className="text-white mb-5">Header</h4>
-                            <ul className="list-unstyled">
-                                <li className="mb-3">
-                                    <Link href="#">
-                                        <a>Item</a>
-                                    </Link>
-                                </li>
-                                <li className="mb-3">
-                                    <Link href="#">
-                                        <a>Item</a>
-                                    </Link>
-                                </li>
-                                <li className="mb-3">
-                                    <Link href="#">
-                                        <a>Item</a>
-                                    </Link>
-                                </li>
-                                <li className="mb-3">
-                                    <Link href="#">
-                                        <a>Item</a>
-                                    </Link>
-                                </li>
-                            </ul>
-                        </Col>
-                        <Col lg={2} md={3} sm={4} className="mb-5 mb-md-0">
-                            <h4 className="text-white mb-5">Header</h4>
-                            <ul className="list-unstyled">
-                                <li className="mb-3">
-                                    <Link href="#">
-                                        <a>Item</a>
-                                    </Link>
-                                </li>
-                                <li className="mb-3">
-                                    <Link href="#">
-                                        <a>Item</a>
-                                    </Link>
-                                </li>
-                                <li className="mb-3">
-                                    <Link href="#">
-                                        <a>Item</a>
-                                    </Link>
-                                </li>
-                                <li className="mb-3">
-                                    <Link href="#">
-                                        <a>Item</a>
-                                    </Link>
-                                </li>
-                            </ul>
-                        </Col>
+                        {settings.footerLinks?.map((section) => (
+                            <Col lg={2} md={3} sm={4} className="mb-5 mb-md-0" key={section.sys.id}>
+                                <h4 className="text-white mb-5">{section.fields.sectionTitle}</h4>
+                                <ul className="list-unstyled">
+                                    {section.fields.links?.map((link) => (
+                                        <li className="mb-3" key={link.sys.id}>
+                                            <Link href={link.fields.link}>
+                                                <a>{link.fields.linkText}</a>
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </Col>
+                        ))}
                     </Row>
                 </Container>
             </div>
