@@ -91,6 +91,9 @@ export interface IEventFields {
   /** Title */
   title: string;
 
+  /** Thumbnail Image */
+  thumbnailImage: Asset;
+
   /** Slug */
   slug: string;
 

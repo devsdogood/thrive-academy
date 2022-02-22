@@ -11,6 +11,7 @@ type EventPreviewProps = {
 
 const EventPreview: React.FC<EventPreviewProps> = ({ entry }) => {
   let time = entry.fields.dateAndTime;
+  let image = entry.fields.thumbnailImage.fields.file;
   let day = GetDay(time);
   let month = GetMonth(time);
 
@@ -19,12 +20,12 @@ const EventPreview: React.FC<EventPreviewProps> = ({ entry }) => {
       <Link href={`/events/${entry.fields.slug}`}>
         <a>
           <Card className='border-0 rounded-0 hover-shadow'>
-            <div className="card-img position-relative">
+            <div className="card-img position-relative event-img">
               <Image
-                src="/event-1.jpg"
-                alt="Event"
-                width={372}
-                height={328}
+                src={`https:${image.url}`}
+                alt={`${entry.fields.title} event thumbnail image`}
+                height={image.details.image?.height}
+                width={image.details.image?.width}
               />
             </div>
             <div className="card-date">

@@ -34,6 +34,11 @@ img {
   border: 0;
 }
 
+.event-img {
+  max-height: 350px;
+  overflow-y: hidden;
+}
+
 a,
 a:hover,
 a:focus {
