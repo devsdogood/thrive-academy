@@ -8,20 +8,20 @@ type BoardMemberProps = {
 };
 
 const BoardMember: React.FC<BoardMemberProps> = ({ entry }) => {
-  const image = entry.fields.image;
+  const image = entry.fields.image.fields.file;
 
   return (
     <Container fluid>
       <Row className="row mb-4">
         <Col xs={12} sm={12} md="auto">
-          <div style={{ width: '225px' }}>
-            <Image
-              src={`https:${image.fields.file.url}`}
-              alt={image.fields.description}
-              width={225}
-              height={225}
-            />
-          </div>
+        <div className="board-img">
+              <Image
+                src={`https:${image.url}`}
+                alt={`${entry.fields.fullName} board member image`}
+                height={image.details.image?.height}
+                width={image.details.image?.width}
+              />
+            </div>
         </Col>
         <Col xs={12} sm={12} md={9} lg={9} xl={9} className="column flex-grow BoardMemberDetails">
           <div className={styles.name}>
